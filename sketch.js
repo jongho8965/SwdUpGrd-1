@@ -1583,5 +1583,7 @@ function updateValue() {
   NOautoClick -= 1; // 20초마다 NOautoClick 변수 값을 -1로 업데이트
   }
 }
-
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+}
 //http://creativecommons.org/licenses/by-nc-nd/4.0/
