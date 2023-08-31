@@ -86,7 +86,7 @@ let FTR = 0
 let FT = 0
 
 let goods = true
-let isGoodsAdded = false;
+let isGoodsAdded = 0;
 
 let input, button, greeting;
 
@@ -272,8 +272,8 @@ function draw() {
   text("게임에 오류가 발생할수",10, 230)
   text("있습니다.",10, 240)
   text("오토클릭 감지횟수 : " + NOautoClick + " / 15",10, 250)
-  text("2.2.0 업뎃 : 명성 추가됨",10, 260)
-  text("2.2.1 업뎃 : 검 파괴 시스템 & 방지권 추가됨",10, 270)
+  text("2.3.1 업뎃 : bug-fix",10, 260)
+  text("2.3.0 업뎃 : 검 파괴 시스템 & 방지권 추가됨",10, 270)
   text("공식 사이트로 접속시 업데이트가 느릴수 있음",10, 290)
   textSize(15)
 //  text("HOW TO PLAY? - PRESS H KEY",10,640)
@@ -285,7 +285,7 @@ function draw() {
   textSize(9.5)
   text("rp.of_JHJH ©",272.25,72)
   textSize(12)
-  text("Ver-2.2.1",215,73.5)
+  text("Ver-2.3.1",215,73.5)
 //  text(LUCKS * 10,100,100) - 테스터
   textSize(14)
 //  text("위험한 복권은 70만원의 가격으로 3/1 확률로 100만원 당첨",12, 300)
@@ -664,14 +664,14 @@ function draw() {
     text("9강 다이아몬드가 박힌 붉은검루비검",50,500)
     pop()
   }
-    if(LUCKS == 10 && !isGoodsAdded) {
+    if(LUCKS == 10 && isGoodsAdded == 0) {
     push()
     fill(22)
     textSize(15)
     textStyle(BOLD)
     text("10강 100% 다이아몬드로만 이루어진 검 ",50,500)
     good += 1
-    isGoodsAdded = true;
+    isGoodsAdded = 1;
     pop()
   }
     if(LUCKS == 11) {
@@ -744,14 +744,14 @@ function draw() {
     textStyle(BOLD)
     text("19강 투명의 검",50,500)
     pop()
-  }  if(LUCKS == 20 && !isGoodsAdded) {
+  }  if(LUCKS == 20 && isGoodsAdded == 1) {
     push()
     fill(22)
     textSize(15)
     textStyle(BOLD)
     text("20강 물과 바람, 태양이 만들어낸 신비의 검",50,500)
     good += 1
-    isGoodsAdded = true;
+    isGoodsAdded = 2;
     pop()
   }
     if(LUCKS == 21) {
@@ -986,13 +986,13 @@ function draw() {
     text("49강 더블-더블 번개",50,500)
     pop()
   }
-    if(LUCKS == 50 && !isGoodsAdded) {
+    if(LUCKS == 50 && isGoodsAdded == 2) {
     push()
     fill(22)
     textSize(15)
     textStyle(BOLD)
     good += 2
-    isGoodsAdded = true;
+    isGoodsAdded = 3;
     text("50강 번개의 신이여 온 세상을 흔드리라",50,500)
   }
     if(LUCKS == 51) {
@@ -1067,11 +1067,11 @@ function draw() {
     text("59강 빠빨간맛! 북! 조-선 빼빼로",50,500)
     pop()
   }
-    if(LUCKS == 60 && !isGoodsAdded){
+    if(LUCKS == 60 && isGoodsAdded == 3){
     push()
     fill(22)
     good += 3
-    isGoodsAdded = true;
+    isGoodsAdded = 4;
     textSize(15)
     textStyle(BOLD)
     text("60강 치킨(파닭파닭)",50,500)
@@ -1149,14 +1149,14 @@ function draw() {
     text("69강 ROSE SWORD - POWER",50,500)
     pop()
   }
-    if(LUCKS ==70 && !isGoodsAdded) {
+    if(LUCKS ==70 && isGoodsAdded == 4) {
     push()
     fill(22)
     textSize(15)
     textStyle(BOLD)
     text("70강 70조 짜리 아파트",50,500)
     good += 5
-    isGoodsAdded = true;
+    isGoodsAdded = 5;
     pop()
   }
     if(LUCKS == 71) {
