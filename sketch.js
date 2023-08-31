@@ -85,6 +85,11 @@ let UPD = false
 let FTR = 0
 let FT = 0
 
+//sant50,sant500
+
+let sant50 = 20
+let sant500 = 380
+
 let goods = true
 let isGoodsAdded = 0;
 
@@ -272,7 +277,7 @@ function draw() {
   text("게임에 오류가 발생할수",10, 230)
   text("있습니다.",10, 240)
   text("오토클릭 감지횟수 : " + NOautoClick + " / 15",10, 250)
-  text("2.3.1 업뎃 : bug-fix",10, 260)
+  text("2.3.1 ~ 2.3.2 업뎃 : bug-fix",10, 260)
   text("2.3.0 업뎃 : 검 파괴 시스템 & 방지권 추가됨",10, 270)
   text("공식 사이트로 접속시 업데이트가 느릴수 있음",10, 290)
   textSize(15)
@@ -285,7 +290,7 @@ function draw() {
   textSize(9.5)
   text("rp.of_JHJH ©",272.25,72)
   textSize(12)
-  text("Ver-2.3.1",215,73.5)
+  text("Ver-2.3.2",215,73.5)
 //  text(LUCKS * 10,100,100) - 테스터
   textSize(14)
 //  text("위험한 복권은 70만원의 가격으로 3/1 확률로 100만원 당첨",12, 300)
@@ -591,7 +596,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("0강 나무막대기",50,500)
+    text("0강 나무막대기",sant50,sant500)
     pop()
   }
     if(LUCKS == 1) {
@@ -599,7 +604,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("1강 나무검",50,500)
+    text("1강 나무검",sant50,sant500)
     pop()
   }
     if(LUCKS == 2) {
@@ -607,7 +612,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("2강 쓸만한 나무검",50,500)
+    text("2강 쓸만한 나무검",sant50,sant500)
     pop()
   }
     if(LUCKS == 3) {
@@ -615,7 +620,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("3강 일반검",50,500)
+    text("3강 일반검",sant50,sant500)
     pop()
   }
     if(LUCKS == 4) {
@@ -623,7 +628,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("4강 2단봉",50,500)
+    text("4강 2단봉",sant50,sant500)
     pop()
   }
     if(LUCKS == 5) {
@@ -631,7 +636,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("5강 3단봉",50,500)
+    text("5강 3단봉",sant50,sant500)
     pop()
   }
     if(LUCKS == 6) {
@@ -639,7 +644,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("6강 단단한 철검",50,500)
+    text("6강 단단한 철검",sant50,sant500)
     pop()
   }
     if(LUCKS == 7) {
@@ -647,21 +652,21 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("7강 금으로 만들어진 검",50,500)
+    text("7강 금으로 만들어진 검",sant50,sant500)
     pop()
   }  if(LUCKS == 8) {
     push()
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("8강 루비장식이 달린 검",50,500)
+    text("8강 루비장식이 달린 검",sant50,sant500)
     pop()
   }  if(LUCKS == 9) {
     push()
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("9강 다이아몬드가 박힌 붉은검루비검",50,500)
+    text("9강 다이아몬드가 박힌 붉은검루비검",sant50,sant500)
     pop()
   }
     if(LUCKS == 10 && isGoodsAdded == 0) {
@@ -669,7 +674,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("10강 100% 다이아몬드로만 이루어진 검 ",50,500)
+    text("10강 100% 다이아몬드로만 이루어진 검 ",sant50,sant500)
     good += 1
     isGoodsAdded = 1;
     pop()
@@ -679,7 +684,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("11강 전설적인 황금의 창",50,500)
+    text("11강 전설적인 황금의 창",sant50,sant500)
     pop()
   }
     if(LUCKS == 12) {
@@ -687,7 +692,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("12강 불타는 검",50,500)
+    text("12강 불타는 검",sant50,sant500)
     pop()
   }
     if(LUCKS == 13) {
@@ -695,7 +700,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("13강 그림자의 칼",50,500)
+    text("13강 그림자의 칼",sant50,sant500)
     pop()
   }
     if(LUCKS == 14) {
@@ -703,7 +708,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("14강 어둠의 검",50,500)
+    text("14강 어둠의 검",sant50,sant500)
     pop()
   }
     if(LUCKS == 15) {
@@ -711,7 +716,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("15강 암흑의 검",50,500)
+    text("15강 암흑의 검",sant50,sant500)
     pop()
   }
     if(LUCKS == 16) {
@@ -719,7 +724,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("16강 DARK SOULS SOWRD",50,500)
+    text("16강 DARK SOULS SOWRD",sant50,sant500)
     pop()
   }
     if(LUCKS == 17) {
@@ -727,7 +732,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("17강 어두운 자들의 힘",50,500)
+    text("17강 어두운 자들의 힘",sant50,sant500)
     pop()
   }
     if(LUCKS == 18) {
@@ -735,21 +740,21 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("18강 보이지 않는 검",50,500)
+    text("18강 보이지 않는 검",sant50,sant500)
     pop()
   }  if(LUCKS == 19) {
     push()
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("19강 투명의 검",50,500)
+    text("19강 투명의 검",sant50,sant500)
     pop()
   }  if(LUCKS == 20 && isGoodsAdded == 1) {
     push()
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("20강 물과 바람, 태양이 만들어낸 신비의 검",50,500)
+    text("20강 물과 바람, 태양이 만들어낸 신비의 검",sant50,sant500)
     good += 1
     isGoodsAdded = 2;
     pop()
@@ -759,7 +764,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("21강 바다에서 뽑은 기운이 잠든 *해신*",50,500)
+    text("21강 바다에서 뽑은 기운이 잠든 *해신*",sant50,sant500)
     pop()
   }
     if(LUCKS == 22) {
@@ -767,7 +772,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("22강 장미칼",50,500)
+    text("22강 장미칼",sant50,sant500)
     pop()
   }
     if(LUCKS == 23) {
@@ -775,7 +780,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("23강 La Vie en Rose",50,500)
+    text("23강 La Vie en Rose",sant50,sant500)
     pop()
   }
     if(LUCKS == 24) {
@@ -783,7 +788,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("24강 天樂(천악)",50,500)
+    text("24강 天樂(천악)",sant50,sant500)
     pop()
   }
     if(LUCKS == 25) {
@@ -791,7 +796,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("25강 디바인 스타 퍼니셔!!!",50,500)
+    text("25강 디바인 스타 퍼니셔!!!",sant50,sant500)
     pop()
   }
     if(LUCKS == 26) {
@@ -799,7 +804,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("26강 백룡의 낫",50,500)
+    text("26강 백룡의 낫",sant50,sant500)
     pop()
   }
     if(LUCKS == 27) {
@@ -807,7 +812,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("27강 $$$ 돈의-권력 $$$",50,500)
+    text("27강 $$$ 돈의-권력 $$$",sant50,sant500)
     pop()
   }
   if(LUCKS == 28) {
@@ -815,7 +820,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("28강 공허의 빛",50,500)
+    text("28강 공허의 빛",sant50,sant500)
     pop()
   }
   if(LUCKS == 29) {
@@ -823,7 +828,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("29강 우라늄 검",50,500)
+    text("29강 우라늄 검",sant50,sant500)
     pop()
   }
   if(LUCKS == 30) {
@@ -831,7 +836,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("30강 시공간을 가르는 힘",50,500)
+    text("30강 시공간을 가르는 힘",sant50,sant500)
     pop()
   }
   if(LUCKS == 31) {
@@ -839,7 +844,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("31강 수령동지님이 쓰시던(?) 검",50,500)
+    text("31강 수령동지님이 쓰시던(?) 검",sant50,sant500)
     pop()
   }
   if(LUCKS == 32) {
@@ -847,7 +852,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("32강 삼성 회장의 골프채",50,500)
+    text("32강 삼성 회장의 골프채",sant50,sant500)
     pop()
   }
   if(LUCKS == 33) {
@@ -855,7 +860,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("33강 해리포터의 마법지팡이",50,500)
+    text("33강 해리포터의 마법지팡이",sant50,sant500)
     pop()
   }
   if(LUCKS == 34) {
@@ -863,7 +868,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("34강 덤블도어의 마법지팡이",50,500)
+    text("34강 덤블도어의 마법지팡이",sant50,sant500)
     pop()
   }
   if(LUCKS == 35) {
@@ -879,7 +884,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("36강 태극기",50,500)
+    text("36강 태극기",sant50,sant500)
     pop()
   }
   if(LUCKS == 37) {
@@ -887,7 +892,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("37강 더블 태극기",50,500)
+    text("37강 더블 태극기",sant50,sant500)
     pop()
   }
   if(LUCKS == 38) {
@@ -895,7 +900,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("38강 더블-더블 태!극!기!",50,500)
+    text("38강 더블-더블 태!극!기!",sant50,sant500)
     pop()
   }
   if(LUCKS == 39) {
@@ -903,7 +908,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("39강 (정치)암살용 도네(?)",50,500)
+    text("39강 (정치)암살용 도네(?)",sant50,sant500)
     pop()
   }
   if(LUCKS == 40) {
@@ -911,7 +916,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("40강 마법진 (그리는 도구)",50,500)
+    text("40강 마법진 (그리는 도구)",sant50,sant500)
     pop()
   }
   if(LUCKS == 41) {
@@ -919,7 +924,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("41강 메태오(1회용)",50,500)
+    text("41강 메태오(1회용)",sant50,sant500)
     pop()
   }
   if(LUCKS == 42) {
@@ -927,7 +932,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("42강 고려대의 위엄",50,500)
+    text("42강 고려대의 위엄",sant50,sant500)
     pop()
   }
   if(LUCKS == 43) {
@@ -935,7 +940,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("43강 연세대의 위엄",50,500)
+    text("43강 연세대의 위엄",sant50,sant500)
     pop()
   }
   if(LUCKS == 44) {
@@ -943,7 +948,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("44강 서울대의 위엄",50,500)
+    text("44강 서울대의 위엄",sant50,sant500)
     pop()
   }
   if(LUCKS == 45) {
@@ -951,7 +956,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("45강 SKY - 서 | 고 | 연, 모두 모였다!",50,500)
+    text("45강 SKY - 서 | 고 | 연, 모두 모였다!",sant50,sant500)
     pop()
   }
   if(LUCKS == 46) {
@@ -959,7 +964,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("46강 bell",50,500)
+    text("46강 bell",sant50,sant500)
     pop()
   }
     if(LUCKS == 47) {
@@ -967,7 +972,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("47강 번개",50,500)
+    text("47강 번개",sant50,sant500)
     pop()
   }
     if(LUCKS == 48) {
@@ -975,7 +980,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("48강 더블-번개",50,500)
+    text("48강 더블-번개",sant50,sant500)
     pop()
   }
     if(LUCKS == 49) {
@@ -983,7 +988,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("49강 더블-더블 번개",50,500)
+    text("49강 더블-더블 번개",sant50,sant500)
     pop()
   }
     if(LUCKS == 50 && isGoodsAdded == 2) {
@@ -993,14 +998,14 @@ function draw() {
     textStyle(BOLD)
     good += 2
     isGoodsAdded = 3;
-    text("50강 번개의 신이여 온 세상을 흔드리라",50,500)
+    text("50강 번개의 신이여 온 세상을 흔드리라",sant50,sant500)
   }
     if(LUCKS == 51) {
     push()
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("51강 공허의 신이여 온 세상을 삼켜라",50,500)
+    text("51강 공허의 신이여 온 세상을 삼켜라",sant50,sant500)
     pop()
   }
     if(LUCKS == 52) {
@@ -1008,7 +1013,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("52강 트럼프의 골프채",50,500)
+    text("52강 트럼프의 골프채",sant50,sant500)
     pop()
   }
     if(LUCKS == 53) {
@@ -1016,7 +1021,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("53강 미국의 권력",50,500)
+    text("53강 미국의 권력",sant50,sant500)
     pop()
   }
     if(LUCKS == 54) {
@@ -1024,7 +1029,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("54강 Black Void Chain",50,500)
+    text("54강 Black Void Chain",sant50,sant500)
     pop()
   }
     if(LUCKS == 55) {
@@ -1032,7 +1037,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("55강 Red Void Chain",50,500)
+    text("55강 Red Void Chain",sant50,sant500)
     pop()
   }
     if(LUCKS == 56) {
@@ -1040,7 +1045,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("56강 한-방 검 (1회용)",50,500)
+    text("56강 한-방 검 (1회용)",sant50,sant500)
     pop()
   }
     if(LUCKS == 57) {
@@ -1048,7 +1053,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("57강 아이스크림 숫가락",50,500)
+    text("57강 아이스크림 숫가락",sant50,sant500)
     pop()
   }
     if(LUCKS == 58) {
@@ -1056,7 +1061,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("58강 나무막대기",50,500)
+    text("58강 나무막대기",sant50,sant500)
     pop()
   }
     if(LUCKS == 59) {
@@ -1064,7 +1069,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("59강 빠빨간맛! 북! 조-선 빼빼로",50,500)
+    text("59강 빠빨간맛! 북! 조-선 빼빼로",sant50,sant500)
     pop()
   }
     if(LUCKS == 60 && isGoodsAdded == 3){
@@ -1074,7 +1079,7 @@ function draw() {
     isGoodsAdded = 4;
     textSize(15)
     textStyle(BOLD)
-    text("60강 치킨(파닭파닭)",50,500)
+    text("60강 치킨(파닭파닭)",sant50,sant500)
     pop()
   }
     if(LUCKS == 61) {
@@ -1082,7 +1087,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("61강 전봇대",50,500)
+    text("61강 전봇대",sant50,sant500)
     pop()
   }
     if(LUCKS == 62) {
@@ -1090,7 +1095,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("62강 전광판",50,500)
+    text("62강 전광판",sant50,sant500)
     pop()
   }
     if(LUCKS == 63) {
@@ -1098,7 +1103,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("63강 으악!!!불편해",50,500)
+    text("63강 으악!!!불편해",sant50,sant500)
     pop()
   }
     if(LUCKS == 64) {
@@ -1106,7 +1111,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("64강 펀-안",50,500)
+    text("64강 펀-안",sant50,sant500)
     pop()
   }
     if(LUCKS == 65) {
@@ -1114,7 +1119,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("65강 한 학생의 분노를 담은 연필",50,500)
+    text("65강 한 학생의 분노를 담은 연필",sant50,sant500)
     pop()
   }
     if(LUCKS == 66) {
@@ -1122,7 +1127,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("66강 도시락 폭탄",50,500)
+    text("66강 도시락 폭탄",sant50,sant500)
     pop()
   }
     if(LUCKS == 67) {
@@ -1130,7 +1135,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("67강 도시-폭탄 (?)",50,500)
+    text("67강 도시-폭탄 (?)",sant50,sant500)
     pop()
   }
     if(LUCKS == 68) {
@@ -1138,7 +1143,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("68강 더블 장미칼",50,500)
+    text("68강 더블 장미칼",sant50,sant500)
     pop()
   }
     if(LUCKS == 69) {
@@ -1146,7 +1151,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("69강 ROSE SWORD - POWER",50,500)
+    text("69강 ROSE SWORD - POWER",sant50,sant500)
     pop()
   }
     if(LUCKS ==70 && isGoodsAdded == 4) {
@@ -1154,7 +1159,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("70강 70조 짜리 아파트",50,500)
+    text("70강 70조 짜리 아파트",sant50,sant500)
     good += 5
     isGoodsAdded = 5;
     pop()
@@ -1164,7 +1169,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("71강 Duptil, Cutlass of the Night",50,500)
+    text("71강 Duptil, Cutlass of the Night",sant50,sant500)
     pop()
   }
     if(LUCKS == 72) {
@@ -1172,7 +1177,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("72강 強すぎて無駄な剣",50,500)
+    text("72강 強すぎて無駄な剣",sant50,sant500)
     pop()
   }
     if(LUCKS == 73) {
@@ -1180,14 +1185,14 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("73강 सुपर आइडल पानी की बोतल",50,500)
+    text("73강 सुपर आइडल पानी की बोतल",sant50,sant500)
   }
     if(LUCKS == 74) {
     push()
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("74강",50,500)
+    text("74강",sant50,sant500)
     pop()
   }
     if(LUCKS == 75) {
@@ -1195,7 +1200,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("75강",50,500)
+    text("75강",sant50,sant500)
     pop()
   }
     if(LUCKS == 76) {
@@ -1203,7 +1208,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("76강",50,500)
+    text("76강",sant50,sant500)
     pop()
   }
     if(LUCKS == 77) {
@@ -1211,7 +1216,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("77강",50,500)
+    text("77강",sant50,sant500)
     pop()
   }
     if(LUCKS == 78) {
@@ -1219,7 +1224,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("78강",50,500)
+    text("78강",sant50,sant500)
     pop()
   }
     if(LUCKS == 79) {
@@ -1227,7 +1232,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("79강",50,500)
+    text("79강",sant50,sant500)
     pop()
   }
     if(LUCKS == 80) {
@@ -1235,7 +1240,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("80",50,500)
+    text("80",sant50,sant500)
     pop()
   }
     if(LUCKS == 81) {
@@ -1243,7 +1248,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("81",50,500)
+    text("81",sant50,sant500)
     pop()
   }
     if(LUCKS == 82) {
@@ -1251,7 +1256,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("82",50,500)
+    text("82",sant50,sant500)
     pop()
   }
     if(LUCKS == 83) {
@@ -1259,7 +1264,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("83",50,500)
+    text("83",sant50,sant500)
     pop()
   }
     if(LUCKS == 84) {
@@ -1267,7 +1272,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("84",50,500)
+    text("84",sant50,sant500)
     pop()
   }
     if(LUCKS == 85) {
@@ -1275,7 +1280,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("85",50,500)
+    text("85",sant50,sant500)
     pop()
   }
     if(LUCKS == 86) {
@@ -1283,7 +1288,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("86",50,500)
+    text("86",sant50,sant500)
     pop()
   }
     if(LUCKS == 87) {
@@ -1291,7 +1296,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("87",50,500)
+    text("87",sant50,sant500)
     pop()
   }
     if(LUCKS == 88) {
@@ -1299,7 +1304,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("88",50,500)
+    text("88",sant50,sant500)
     pop()
   }
     if(LUCKS == 89) {
@@ -1307,7 +1312,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("89",50,500)
+    text("89",sant50,sant500)
     pop()
   }
     if(LUCKS == 90) {
@@ -1315,7 +1320,7 @@ function draw() {
     fill(22)
     textSize(15)
     textStyle(BOLD)
-    text("90",50,500)
+    text("90",sant50,sant500)
     pop()
   }
 //===========================================
