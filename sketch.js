@@ -63,6 +63,7 @@ function setup() {
   backgroundMusic.onended(musicDelay)
   setInterval(updateValue, 100000); //100초마다 업데이트
   startTime = millis(); // 현재 시간 기록
+  gameid = floor(random(1000000000,99999999999))
 //============================================setup
 }
 let musictimer = 3
@@ -122,6 +123,8 @@ let DLS = 0
 //let LPO = 0
 
 let jhpt = 0
+
+let gameid = 0
 
 let redColor = 0;
 let yPos = 0;
@@ -279,8 +282,8 @@ function draw() {
   text("게임에 오류가 발생할수",10, 230)
   text("있습니다.",10, 240)
   text("오토클릭 감지횟수 : " + NOautoClick + " / 15",10, 250)
-  text("2.3.1 ~ 2.3.5 업뎃 : bug-fix",10, 260)
-  text("2.3.3 업뎃 : JH.point 추가됨 (종호종호공화국에서 캐시로 교환 가능)",10, 270)
+  text("2.3.1 ~ 2.3.6 업뎃 : bug-fix",10, 260)
+  text("2.3.6 업뎃 : 게임아이디추가됨(JH.point부정이용 방지)",10, 270)
   text("공식 사이트로 접속시 업데이트가 느릴수 있음",10, 290)
   textSize(15)
 //  text("HOW TO PLAY? - PRESS H KEY",10,640)
@@ -294,7 +297,9 @@ function draw() {
   textSize(9.5)
   text("rp.of_JHJH ©",272.25,72)
   textSize(12)
-  text("Ver-2.3.5",215,73.5)
+  text("Ver-2.3.6",215,73.5)
+  textSize(12)
+  text("GAME_ID : "+ gameid,200,90)
 //  text(LUCKS * 10,100,100) - 테스터
   textSize(14)
 //  text("위험한 복권은 70만원의 가격으로 3/1 확률로 100만원 당첨",12, 300)
@@ -682,7 +687,7 @@ function draw() {
     textStyle(BOLD)
     text("10강 100% 다이아몬드로만 이루어진 검 ",sant50,sant500)
     good += 1
-    jhpt += 10
+    jhpt += 100
     isGoodsAdded = 1;
     pop()
   }
