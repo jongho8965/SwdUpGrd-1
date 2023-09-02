@@ -121,6 +121,8 @@ let DL = 0
 let DLS = 0
 //let LPO = 0
 
+let jhpt = 0
+
 let redColor = 0;
 let yPos = 0;
 let xPos = 0;
@@ -278,7 +280,7 @@ function draw() {
   text("있습니다.",10, 240)
   text("오토클릭 감지횟수 : " + NOautoClick + " / 15",10, 250)
   text("2.3.1 ~ 2.3.2 업뎃 : bug-fix",10, 260)
-  text("2.3.0 업뎃 : 검 파괴 시스템 & 방지권 추가됨",10, 270)
+  text("2.3.3 업뎃 : JH.point 추가됨 (종호종호공화국에서 캐시로 교환 가능)",10, 270)
   text("공식 사이트로 접속시 업데이트가 느릴수 있음",10, 290)
   textSize(15)
 //  text("HOW TO PLAY? - PRESS H KEY",10,640)
@@ -287,10 +289,12 @@ function draw() {
   text("명성 = " + good, 17 , 95)
   text("방지권 = " + npg, 17 , 115)
   text("사용가능 방지권 = " + npgy, 187 , 175)
+  text("JH.point = " + jhpt, 20 , 335)
+  //jhpt
   textSize(9.5)
   text("rp.of_JHJH ©",272.25,72)
   textSize(12)
-  text("Ver-2.3.2",215,73.5)
+  text("Ver-2.3.3",215,73.5)
 //  text(LUCKS * 10,100,100) - 테스터
   textSize(14)
 //  text("위험한 복권은 70만원의 가격으로 3/1 확률로 100만원 당첨",12, 300)
@@ -456,6 +460,7 @@ function draw() {
   // 점수 늘리기
   if(LUCK == 5 && SG == false) {
     LUCKS += 1
+    jhpt += 1
     M += LUCKS * 1200
     SG = true
   }
@@ -464,6 +469,7 @@ function draw() {
   if(LUCK == pg && SG == false) {
     if(npgy == 0) {
       LUCKS = 0
+      jhpt = 0
       SG = true
     }
     else
@@ -676,6 +682,7 @@ function draw() {
     textStyle(BOLD)
     text("10강 100% 다이아몬드로만 이루어진 검 ",sant50,sant500)
     good += 1
+    jhpt += 10
     isGoodsAdded = 1;
     pop()
   }
@@ -997,6 +1004,7 @@ function draw() {
     textSize(15)
     textStyle(BOLD)
     good += 2
+    jhpt += 500
     isGoodsAdded = 3;
     text("50강 번개의 신이여 온 세상을 흔드리라",sant50,sant500)
   }
@@ -1161,6 +1169,7 @@ function draw() {
     textStyle(BOLD)
     text("70강 70조 짜리 아파트",sant50,sant500)
     good += 5
+    jhpt += 1000
     isGoodsAdded = 5;
     pop()
   }
@@ -1469,7 +1478,6 @@ function draw() {
 //=========================================================
 //=========================================================
 }
-
 function mousePressed()
 {
   if(mouseX > 150 && mouseX < 250 && mouseY > 100 &&   mouseY < 150) {
