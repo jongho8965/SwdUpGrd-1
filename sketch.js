@@ -283,7 +283,7 @@ function draw() {
   text("있습니다.",10, 240)
   text("오토클릭 감지횟수 : " + NOautoClick + " / 15",10, 250)
   text("2.3.1 ~ 2.3.7 업뎃 : bug-fix",10, 260)
-  text("2.3.6 업뎃 : 게임아이디추가됨(JH.point부정이용 방지)",10, 270)
+  text("2.3.8 업뎃 : JH.point 밸런스 조절",10, 270)
   text("공식 사이트로 접속시 업데이트가 느릴수 있음",10, 290)
   textSize(15)
 //  text("HOW TO PLAY? - PRESS H KEY",10,640)
@@ -297,7 +297,7 @@ function draw() {
   textSize(9.5)
   text("rp.of_JHJH ©",272.25,72)
   textSize(12)
-  text("Ver-2.3.7",215,73.5)
+  text("Ver-2.3.8",215,73.5)
   textSize(12)
   text("GAME_ID : "+ gameid,200,90)
 //  text(LUCKS * 10,100,100) - 테스터
@@ -465,7 +465,7 @@ function draw() {
   // 점수 늘리기
   if(LUCK == 5 && SG == false) {
     LUCKS += 1
-    jhpt += 1
+    jhpt += LUCKS
     M += LUCKS * 1200
     SG = true
   }
