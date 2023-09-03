@@ -282,7 +282,7 @@ function draw() {
   text("게임에 오류가 발생할수",10, 230)
   text("있습니다.",10, 240)
   text("오토클릭 감지횟수 : " + NOautoClick + " / 15",10, 250)
-  text("2.3.1 ~ 2.3.6 업뎃 : bug-fix",10, 260)
+  text("2.3.1 ~ 2.3.7 업뎃 : bug-fix",10, 260)
   text("2.3.6 업뎃 : 게임아이디추가됨(JH.point부정이용 방지)",10, 270)
   text("공식 사이트로 접속시 업데이트가 느릴수 있음",10, 290)
   textSize(15)
@@ -297,7 +297,7 @@ function draw() {
   textSize(9.5)
   text("rp.of_JHJH ©",272.25,72)
   textSize(12)
-  text("Ver-2.3.6",215,73.5)
+  text("Ver-2.3.7",215,73.5)
   textSize(12)
   text("GAME_ID : "+ gameid,200,90)
 //  text(LUCKS * 10,100,100) - 테스터
@@ -691,6 +691,14 @@ function draw() {
     isGoodsAdded = 1;
     pop()
   }
+    if(LUCKS == 10) {
+    push()
+    fill(22)
+    textSize(15)
+    textStyle(BOLD)
+    text("10강 100% 다이아몬드로만 이루어진 검 ",sant50,sant500)
+    pop()
+  }
     if(LUCKS == 11) {
     push()
     fill(22)
@@ -761,7 +769,8 @@ function draw() {
     textStyle(BOLD)
     text("19강 투명의 검",sant50,sant500)
     pop()
-  }  if(LUCKS == 20 && isGoodsAdded == 1) {
+  }  
+    if(LUCKS == 20 && isGoodsAdded == 1) {
     push()
     fill(22)
     textSize(15)
@@ -769,6 +778,15 @@ function draw() {
     text("20강 물과 바람, 태양이 만들어낸 신비의 검",sant50,sant500)
     good += 1
     isGoodsAdded = 2;
+    jhpt += 500
+    pop()
+  }
+  if(LUCKS == 20) {
+    push()
+    fill(22)
+    textSize(15)
+    textStyle(BOLD)
+    text("20강 물과 바람, 태양이 만들어낸 신비의 검",sant50,sant500)
     pop()
   }
     if(LUCKS == 21) {
