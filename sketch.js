@@ -290,7 +290,7 @@ function draw() {
   text("게임에 오류가 발생할수",10, 230)
   text("있습니다.",10, 240)
   text("오토클릭 감지횟수 : " + NOautoClick + " / 15",10, 250)
-  text("2.3.1 ~ 2.3.7 업뎃 : bug-fix",10, 260)
+  text("2.3.1 ~ 2.4.1 업뎃 : bug-fix",10, 260)
   text("2.4.0 업뎃 : 주식추가 및 뉴 시즌",10, 270)
   text("공식 사이트로 접속시 업데이트가 느릴수 있음",10, 290)
   textSize(15)
@@ -305,7 +305,7 @@ function draw() {
   textSize(9.5)
   text("rp.of_JHJH ©",272.25,72)
   textSize(12)
-  text("Ver-2.4.0",215,73.5)
+  text("Ver-2.4.1",215,73.5)
   textSize(12)
   text("GAME_ID : "+ gameid,200,90)
 //  text(LUCKS * 10,100,100) - 테스터
@@ -1688,7 +1688,7 @@ function windowResized() {
 
 // 주식 가격 업데이트 함수
 function updateStockPrice() {
-  stockPrice += random(-15,15);
+  stockPrice += random(-50,50);
 }
 
 //http://creativecommons.org/licenses/by-nc-nd/4.0/
