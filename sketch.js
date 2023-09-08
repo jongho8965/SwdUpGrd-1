@@ -54,7 +54,6 @@ let NOautoClick = 0
 
 function setup() {
 //============================================setup
-
   createCanvas(windowWidth, windowHeight);
   fightcolorR = round(random(0,255)); 
   fightcolorG = round(random(0,255)); 
@@ -64,6 +63,7 @@ function setup() {
   setInterval(updateValue, 100000); //100초마다 업데이트
   startTime = millis(); // 현재 시간 기록
   gameid = floor(random(1000000000,99999999999))
+  setInterval(updateStockPrice, 1000);
 //============================================setup
 }
 let musictimer = 3
@@ -112,6 +112,11 @@ let pg = 120
 
 let startTime;
 let showAlert = false;
+
+let balance = 1000; // 초기 자본
+let stockPrice = 1000; // 초기 주식 가격
+let stocks = 0; // 보유 주식 수
+let clicked = false; // 클릭 이벤트 처리 플래그
 
 let Point = 0
 let LUCK = 0
@@ -236,7 +241,10 @@ function draw() {
   strokeWeight(0.7)
   rect(2,2,windowWidth - 4, windowHeight - 4)
   strokeWeight(1.5)
-
+//-------------------------------------------------
+    if (stockPrice <= 0 ) {
+      stockPrice = 0
+    }
 //-------------------------------------------------
     //버튼 오브젝트
   push();
@@ -283,7 +291,7 @@ function draw() {
   text("있습니다.",10, 240)
   text("오토클릭 감지횟수 : " + NOautoClick + " / 15",10, 250)
   text("2.3.1 ~ 2.3.7 업뎃 : bug-fix",10, 260)
-  text("2.3.8 업뎃 : JH.point 밸런스 조절",10, 270)
+  text("2.4.0 업뎃 : 주식추가 및 뉴 시즌",10, 270)
   text("공식 사이트로 접속시 업데이트가 느릴수 있음",10, 290)
   textSize(15)
 //  text("HOW TO PLAY? - PRESS H KEY",10,640)
@@ -297,7 +305,7 @@ function draw() {
   textSize(9.5)
   text("rp.of_JHJH ©",272.25,72)
   textSize(12)
-  text("Ver-2.3.8",215,73.5)
+  text("Ver-2.4.0",215,73.5)
   textSize(12)
   text("GAME_ID : "+ gameid,200,90)
 //  text(LUCKS * 10,100,100) - 테스터
@@ -460,6 +468,46 @@ function draw() {
   fill(255)
   text("방지권 구매하기",157, 430)
   pop()
+//-----------------------------------------------
+  if(mouseX > 150 && mouseX < 250 
+     && mouseY > 500 && mouseY < 550) 
+  {
+    fill(0,51,255)
+  }
+  else{
+    fill(0,102,255)
+  }
+  
+  rect(150,500,97,50);
+  
+  if(mouseX > 260 && mouseX < 360 
+     && mouseY > 500 && mouseY < 550) 
+  {
+    fill(0,51,255)
+  }
+  else{
+    fill(0,102,255)
+  }
+  
+  rect(260,500,97,50);
+  
+  push();
+  textSize(20);
+  fill(0)
+//  text(Point,195.3, 177);
+  textSize (12)
+  textStyle(BOLD)
+  fill(255)
+  text("주식 구매하기",160, 530)
+  text("주식 판매하기",270, 530)
+  fill(22)
+  textSize(15);
+
+  text(`1주당 가격: $${stockPrice.toFixed(2)}`, 180, 490);
+  text("보유개수 " + stocks + " 주", 205, 570);
+  pop()
+  
+  
 //-----------------------------------------------
   
   // 점수 늘리기
@@ -1590,7 +1638,22 @@ if(mouseX > 150 && mouseX < 250 && mouseY > 300 && mouseY < 350) {
           }
         }
       pop()
+    }
+    if(mouseX > 150 && mouseX < 250 
+     && mouseY > 500 && mouseY < 550 && M > stockPrice) {
+      //주식 구매
+        stocks++;
+        M -= stockPrice;
+        clicked = true; // 클릭 이벤트 처리 플래그 설정
+    }
+    if(mouseX > 260 && mouseX < 360 
+     && mouseY > 500 && mouseY < 550 && 0 < stocks) {
+      // 주식 판매
+        stocks--;
+        M += stockPrice;
+        clicked = true; // 클릭 이벤트 처리 플래그 설정
       }
+    
 //----------------------------------------------if2
   
   // 다른코드 지역 (여기에 코드 X) - cd = mouseCLICK
@@ -1622,4 +1685,10 @@ function updateValue() {
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }
+
+// 주식 가격 업데이트 함수
+function updateStockPrice() {
+  stockPrice += random(-15,15);
+}
+
 //http://creativecommons.org/licenses/by-nc-nd/4.0/
