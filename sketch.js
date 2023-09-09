@@ -114,7 +114,7 @@ let startTime;
 let showAlert = false;
 
 let balance = 1000; // 초기 자본
-let stockPrice = 1000; // 초기 주식 가격
+let stockPrice = 20000; // 초기 주식 가격
 let stocks = 0; // 보유 주식 수
 let clicked = false; // 클릭 이벤트 처리 플래그
 
@@ -290,8 +290,8 @@ function draw() {
   text("게임에 오류가 발생할수",10, 230)
   text("있습니다.",10, 240)
   text("오토클릭 감지횟수 : " + NOautoClick + " / 15",10, 250)
-  text("2.3.1 ~ 2.4.1 업뎃 : bug-fix",10, 260)
-  text("2.4.0 업뎃 : 주식추가 및 뉴 시즌",10, 270)
+  text("2.3.1 ~ 2.4.2 업뎃 : bug-fix & 밸런스 조절",10, 260)
+  text("2.4.2 업데이트 예정 : 뉴스 추가 ",10, 270)
   text("공식 사이트로 접속시 업데이트가 느릴수 있음",10, 290)
   textSize(15)
 //  text("HOW TO PLAY? - PRESS H KEY",10,640)
@@ -1688,7 +1688,7 @@ function windowResized() {
 
 // 주식 가격 업데이트 함수
 function updateStockPrice() {
-  stockPrice += random(-50,50);
+  stockPrice += random(-10000,10000);
 }
 
 //http://creativecommons.org/licenses/by-nc-nd/4.0/
