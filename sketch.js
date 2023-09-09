@@ -63,7 +63,7 @@ function setup() {
   setInterval(updateValue, 100000); //100초마다 업데이트
   startTime = millis(); // 현재 시간 기록
   gameid = floor(random(1000000000,99999999999))
-  setInterval(updateStockPrice, 1000);
+  setInterval(updateStockPrice, 2000);
 //============================================setup
 }
 let musictimer = 3
@@ -114,7 +114,7 @@ let startTime;
 let showAlert = false;
 
 let balance = 1000; // 초기 자본
-let stockPrice = 20000; // 초기 주식 가격
+let stockPrice = 50000; // 초기 주식 가격
 let stocks = 0; // 보유 주식 수
 let clicked = false; // 클릭 이벤트 처리 플래그
 
