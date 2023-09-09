@@ -291,7 +291,7 @@ function draw() {
   text("있습니다.",10, 240)
   text("오토클릭 감지횟수 : " + NOautoClick + " / 15",10, 250)
   text("2.3.1 ~ 2.4.2 업뎃 : bug-fix & 밸런스 조절",10, 260)
-  text("2.4.2 업데이트 예정 : 뉴스 추가 ",10, 270)
+  text("2.4.3 업데이트 예정 : 뉴스 추가 ",10, 270)
   text("공식 사이트로 접속시 업데이트가 느릴수 있음",10, 290)
   textSize(15)
 //  text("HOW TO PLAY? - PRESS H KEY",10,640)
@@ -305,7 +305,7 @@ function draw() {
   textSize(9.5)
   text("rp.of_JHJH ©",272.25,72)
   textSize(12)
-  text("Ver-2.4.1",215,73.5)
+  text("Ver-2.4.2",215,73.5)
   textSize(12)
   text("GAME_ID : "+ gameid,200,90)
 //  text(LUCKS * 10,100,100) - 테스터
