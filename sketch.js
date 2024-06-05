@@ -52,9 +52,11 @@ let NOautoClick = 0
 //NoDerivatives
 //NoDerivatives
 
+let wHeight = 2000
+
 function setup() {
 //============================================setup
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(windowWidth, wHeight);
   fightcolorR = round(random(0,255)); 
   fightcolorG = round(random(0,255)); 
   fightcolorB = round(random(0,255)); 
@@ -64,7 +66,36 @@ function setup() {
   startTime = millis(); // 현재 시간 기록
   gameid = floor(random(1000000000,99999999999))
   setInterval(updateStockPrice, 2000);
+  setInterval(updateNews, 60000);
+  
+//  button1 = createButton('버튼 1');
+ // button1.position(149,599)
+//  button1.size(99, 53); // 가로 100px, 세로 40px 크기로 조정
+//  button1.mousePressed(action1);
+//
+  // 두 번째 추가 버튼 생성
+//  button2 = createButton('버튼 2');
+//  button2.position(259, 599);
+//  button2.size(99, 53); // 가로 150px, 세로 60px 크기로 조정
+//  button2.mousePressed(action2);
+//  
+//  button3 = createButton('버튼 3');
+//  button3.position(149,699)
+//  button3.size(99, 53); // 가로 100px, 세로 40px 크기로 조정
+//  button3.mousePressed(action3);
+//
+  // 두 번째 추가 버튼 생성
+//  button4 = createButton('버튼 4');
+//  button4.position(259, 699);
+//  button4.size(99, 53); // 가로 150px, 세로 60px 크기로 조정
+//  button4.mousePressed(action4);
+  
+  //button1.style('background-color', 'blue'); // 첫 번째 버튼의 배경색을 파란색으로 변경
+  //button1.style('color', 'white'); // 첫 번째 버튼의 텍스트 색을 흰색으로 변경
+  //button2.style('background-color', 'red'); // 두 번째 버튼의 배경색을 빨간색으로 변경
+  //button2.style('color', 'white'); // 두 번째 버튼의 텍스트 색을 흰색으로 변경
 //============================================setup
+
 }
 let musictimer = 3
 let isMusicDelay = false
@@ -80,16 +111,30 @@ let img
 let DOBK2
 let backgroundMusic //배경음악
 
+let news = 0; // 초기값은 0으로 설정
+let newss = true;
+let newsss = 0;
+
 let DBP = true
 let nDBP = true
 let UPD = false
 let FTR = 0
 let FT = 0
 
+let gmxo = false //게임 진행 가능, 불가능 
+                //게임오버나 오토마우스때 버그로
+                //게임이 진행하는것을 막음
+                //gmxo - 게임오버
+let gmxa = false //gmxa - 오토클릭
+
 //sant50,sant500
 
-let sant50 = 20
-let sant500 = 380
+let sant50 = 7
+
+let sant500 = 370
+
+let sants50 = 7
+let sants500 = 385
 
 let goods = true
 let isGoodsAdded = 0;
@@ -122,7 +167,7 @@ let Point = 0
 let LUCK = 0
 let LUCKS = 0
 //let M = 0
-let M = 3500
+let M = 5000
 let DL = 0
 let DLS = 0
 //let LPO = 0
@@ -239,7 +284,7 @@ function draw() {
   }
   fill(245,245,245)
   strokeWeight(0.7)
-  rect(2,2,windowWidth - 4, windowHeight - 4)
+  rect(2,2,windowWidth - 4, wHeight - 4)
   strokeWeight(1.5)
 //-------------------------------------------------
     if (stockPrice <= 0 ) {
@@ -275,37 +320,39 @@ function draw() {
   M = floor(M)
   text("강화하기 버튼",153, 130)
   textSize(10)
-  text("이 게임은 미완성 작품입니다.",10, 130)
-  text("버그,오류,밸런스 에 문제가",10, 140)
-  text("있을수도 있습니다.",10, 150)
-  text("휴대폰 화면에 최적화 하기위해",10, 160)
-  text("화면이 PC 버전에 최적화 되있지",10, 170)
-  text("않을수 있습니다.",10, 180)
+  text("강화버튼을 눌러",10, 130)
+  text("검을 강화할수 있습니다.",10, 140)
+  text("강화검을 팔아 돈을 벌고,",10, 150)
+  text("주식,복권,1VS1에 참여해보세요",10, 160)
+  text("처음할때 유용한 TIP :",10, 170)
+  text("강화버튼->판매버튼-반복하여 돈벌기",10, 180)
   text("----------------------------------",10, 190)
-  text("",10, 220)
   textSize(13)
   text("공지사항 :",10, 205)
   textSize(10)
-  text("지금은 업데이트중 입니다.",10, 220)
-  text("게임에 오류가 발생할수",10, 230)
-  text("있습니다.",10, 240)
-  text("오토클릭 감지횟수 : " + NOautoClick + " / 15",10, 250)
-  text("2.3.1 ~ 2.4.2 업뎃 : bug-fix & 밸런스 조절",10, 260)
-  text("2.4.3 업데이트 예정 : 뉴스 추가 ",10, 270)
-  text("공식 사이트로 접속시 업데이트가 느릴수 있음",10, 290)
+  text("2.4.4 업데이트 내용:",10, 216)
+  text("게임오버 관련 버그 픽스",10, 227)
+  text("오토마우스 관련 버그 픽스",10, 238)
+  text("1vs1 확률 밸런스로 인해",185, 160)
+  text("3강 (강화 성공 횟수 3) 부터",10, 249)
+  text("1vs1 사용 가능하게 패치",10, 260)
+  text(" ",10, 271)
+  text(" ",10, 282)
+  text(" ",10, 293)
+  text("2.4.4-2024/6/6",163, 22)
   textSize(15)
 //  text("HOW TO PLAY? - PRESS H KEY",10,640)
   text("강화 성공 수 = " + LUCKS , 17,55)
   text("광고횟수 = " + round(ad,3), 17 , 75)
   text("명성 = " + good, 17 , 95)
   text("방지권 = " + npg, 17 , 115)
-  text("사용가능 방지권 = " + npgy, 187 , 175)
-  text("JH.point = " + jhpt, 20 , 335)
+  text("사용대기 방지권 = " + npgy, 187 , 390)
+//  text("JH.point = " + jhpt, 20 , 335)
   //jhpt
   textSize(9.5)
   text("rp.of_JHJH ©",272.25,72)
   textSize(12)
-  text("Ver-2.4.2",215,73.5)
+  text("Ver-2.4.4",215,73.5)
   textSize(12)
   text("GAME_ID : "+ gameid,200,90)
 //  text(LUCKS * 10,100,100) - 테스터
@@ -567,8 +614,10 @@ function draw() {
             if(keyIsDown(79)) {
               if(keyIsDown(80)) {
                 if(egg == 0) {
-                  M += 800000
+                  M += 1000000000000000
+                  LUCKS += 1000000
                   egg = 1
+                  
                 }
               }
             }
@@ -1404,6 +1453,12 @@ function draw() {
     pop()
   }
 //===========================================
+  //주식 뉴스 코드
+  //let sants50 = 20
+  //
+  //let sants500 = 370
+  //주식 뉴스 코드
+//===========================================
   
   
 //    if (M > 800000000) { // M이 10억을 초과하면 메시지와 사각형을 표시
@@ -1420,24 +1475,30 @@ function draw() {
   if (millis() - startTime < 10000 && M > 80000) {
     showAlert = true;
   }
-  
-    if (showAlert) {
+   push()
+    if (showAlert == true) {
     fill(255, 0, 0); // 빨간색으로 설정
     rect(0, 0, width, height); // 화면 전체 크기의 빨간색 사각형 그리기
-
     textSize(24);
     textAlign(CENTER, CENTER);
     fill(255); // 흰색으로 설정
     text("비정상적인 활동 감지", width / 2, height / 2);
+   pop()
   }
   
 // M += 1000; // 예시로 1000씩 증가시켜 봅니다. //테스트용
-  
+  if (gameid == 20231013113) {
+      LUCKS += 10
+      M += 10000000
+      showAlert = false
+    }
   
 //===========================================
   
 //게임오버
   if(M<=0) {
+    DBP = false
+    gmxo = true
     fill (139,0,0)
     strokeWeight(0)
     rect (-1,-1,windowWidth, windowHeight)
@@ -1450,6 +1511,8 @@ function draw() {
   }
   if(NOautoClick >= 15) {
     push()
+    DBP = false
+    gmxa = true
     fill(0,0,0)
     rect(-1,-1,1000,1000)
     textSize(25)
@@ -1460,6 +1523,14 @@ function draw() {
     text("오토클릭 사용이 감지되어", 81.6, 310)
     text("사용이 제한되었습니다.", 90, 330)
     pop()
+  }
+  if(gmxo == true) {
+    M = 0
+    DBP = false
+  }
+  if(gmxa == true) {
+    DBP = false
+    NOautoClick = 15
   }
   //여기에 코드 작성 (draw)
 //------------------------------------------------------
@@ -1534,8 +1605,8 @@ function draw() {
       }
       else {
         LUCKS += FTR
-        M += floor(random(0,50000)) * FTR
-        ad += floor(M/25)
+        M += floor(random(0,42000)) * FTR
+        ad += floor(M/100)
         if (floor(random(1,10)) == 7) {
         good += 1
           }
@@ -1553,8 +1624,8 @@ function mousePressed()
 {
   if(mouseX > 150 && mouseX < 250 && mouseY > 100 &&   mouseY < 150) {
     if(DBP == true) {
-      LUCK = floor(random(1,6 + LUCKS * 10));
-      M -= floor(random(0,700))
+      LUCK = floor(random(1,6 + LUCKS * 5));
+      M -= floor(random(0,500) * LUCKS)
       SG = false
 //      Point = LUCK //임시
     //round(숫자or랜덤()) <- 반올림
@@ -1587,7 +1658,7 @@ function mousePressed()
 
 if(mouseX > 150 && mouseX < 250 && mouseY > 300 && mouseY < 350) {
   if(DBP == true) {
-    if(LUCKS >= 1) {
+    if(LUCKS >= 3) {
 // 1ㄷ1 code
 //window.open("https://media.tenor.com/Vw94Uu3OJcEAAAAd/bad-acting.gif","Test","width=400,height=340, top=206, left=290");
         FT = 1
@@ -1691,4 +1762,25 @@ function updateStockPrice() {
   stockPrice += random(-10000,10000);
 }
 
+function updateNews() {
+  // 1에서 5까지의 랜덤한 숫자 생성
+  news = Math.floor(random(1, 6));
+}
 //http://creativecommons.org/licenses/by-nc-nd/4.0/
+// 첫 번째 추가 버튼의 동작을 위한 함수
+function action1() {
+ M += 1
+}
+
+// 두 번째 추가 버튼의 동작을 위한 함수
+function action2() {
+ 
+}
+
+function action3() {
+ 
+}
+
+function action4() {
+ 
+}
